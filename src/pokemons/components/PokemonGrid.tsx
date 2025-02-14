@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { SimplePokemon } from '../interfaces/simple-pokemon';
 import { PokemonCard } from './PokemonCard';
 
@@ -8,10 +7,12 @@ interface Props {
 
 export const PokemonGrid = ({ pokemons }: Props) => {
   return (
-    <div className="grid grid-cols-2 gap-4 mt-4">
-      {pokemons.map(pokemon => (
-        <PokemonCard key={pokemon.id} pokemon={pokemon} />
-      ))}
+    <div className="p-4">
+      <div className="grid grid-cols-3 gap-4 !important">
+        {pokemons.map(pokemon => (
+          <PokemonCard key={pokemon.id} pokemon={pokemon} />
+        ))}
+      </div>
     </div>
   );
 };

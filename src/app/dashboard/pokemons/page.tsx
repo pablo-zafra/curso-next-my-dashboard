@@ -1,5 +1,4 @@
-import { PokemonGrid, PokemonsResponse, SimplePokemon } from '@/app/pokemons';
-import Image from 'next/image';
+import { PokemonGrid, PokemonsResponse, SimplePokemon } from '../../../pokemons';
 
 const getPokemons = async (limit = 20, offset = 0): Promise<SimplePokemon[]> => {
   const data: PokemonsResponse = await fetch(
@@ -11,16 +10,21 @@ const getPokemons = async (limit = 20, offset = 0): Promise<SimplePokemon[]> => 
     name: pokemon.name,
   }));
 
+  // throw new Error('Esto es un error que no debería de suceder');
+  // throw notFound();
 
   return pokemons;
 };
 
-export default async function PokemonPage() {
-  const pokemons = await getPokemons(20, 0);
+export default async function PokemonsPage() {
+  const pokemons = await getPokemons(151);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full">
-      <h2 className="">Pokemons</h2>
+    <div className="">
+      <span className="text-5xl my-2">
+        Listado de Pokémons <small>estático</small>
+      </span>
+
       <PokemonGrid pokemons={pokemons} />
     </div>
   );
