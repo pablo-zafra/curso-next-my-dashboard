@@ -1,4 +1,4 @@
-import { CartCounter } from "../../shopping-cart/components/CartCounter";
+import { CartCounter } from '@/shopping-cart/components/CartCounter';
 
 export default function CounterPage() {
   return (
