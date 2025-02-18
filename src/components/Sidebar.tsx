@@ -1,30 +1,38 @@
-import Image from "next/image";
+import Image from 'next/image';
 import {
   IoBrowsersOutline,
   IoCalculator,
   IoFootball,
+  IoHeart,
   IoLogoReact,
-} from "react-icons/io5";
-import { SideBarMenuItem } from "../components";
+  IoHeartOutline,
+} from 'react-icons/io5';
+import { SideBarMenuItem } from '../components';
 
 const menuItems = [
   {
-    path: "/dashboard/main",
+    path: '/dashboard/main',
     icon: <IoBrowsersOutline size={40} />,
-    title: "Main",
-    subtitle: "Visualización",
+    title: 'Main',
+    subtitle: 'Visualización',
   },
   {
-    path: "/dashboard/counter",
+    path: '/dashboard/counter',
     icon: <IoCalculator size={40} />,
-    title: "Counter",
-    subtitle: "Contador Client Side",
+    title: 'Counter',
+    subtitle: 'Contador Client Side',
   },
   {
-    path: "/dashboard/pokemons",
+    path: '/dashboard/pokemons',
     icon: <IoFootball size={40} />,
-    title: "Pokemons",
-    subtitle: "Generación estática",
+    title: 'Pokemons',
+    subtitle: 'Generación estática',
+  },
+  {
+    path: '/dashboard/favorites',
+    icon: <IoHeartOutline size={40} />,
+    title: 'Favoritos',
+    subtitle: 'Generación estática',
   },
 ];
 
@@ -32,7 +40,7 @@ export const Sidebar = () => {
   return (
     <div
       id="menu"
-      style={{ width: "400px" }}
+      style={{ width: '400px' }}
       className="bg-gray-900 min-h-screen z-10 text-slate-300 w-64  left-0 h-screen overflow-y-scroll"
     >
       <div id="logo" className="my-4 px-6">
@@ -40,9 +48,7 @@ export const Sidebar = () => {
           <IoLogoReact className="mr-2" />
           Dash<span className="text-blue-500">8</span>.
         </h1>
-        <p className="text-slate-500 text-sm">
-          Manage your actions and activities
-        </p>
+        <p className="text-slate-500 text-sm">Manage your actions and activities</p>
       </div>
       <div id="profile" className="px-6 py-10">
         <p className="text-slate-500">Welcome back,</p>
@@ -61,7 +67,7 @@ export const Sidebar = () => {
       </div>
 
       <div id="nav" className="w-full px-6">
-        {menuItems.map((item) => (
+        {menuItems.map(item => (
           <SideBarMenuItem key={item.title} {...item} />
         ))}
       </div>

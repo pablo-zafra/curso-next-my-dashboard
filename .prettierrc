@@ -1,10 +1,16 @@
 {
-    "arrowParens": "avoid",
     "bracketSpacing": true,
+    "arrowParens": "avoid",
     "semi": true,
+    "objectWrap": "preserve",
     "singleQuote": true,
-    "trailingComma": "es5",
-    "printWidth": 100,
-    "tabWidth": 2,
-    "spaceAroundTypeAnnotations": false
+    "trailingComma": "none",
+    "printWidth": 80,
+    "proseWrap": "preserve",
+    "spaceAroundTypeAnnotations": false,
+    "bracketSameLine": false,
+    "jsxBracketSameLine": false,
+    "jsxSingleQuote": true,
+    "htmlWhitespaceSensitivity": "ignore",
+    "singleAttributePerLine": true
   }
