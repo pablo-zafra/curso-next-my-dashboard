@@ -1,18 +1,20 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { Move, Type } from '@/pokemons/interfaces/pokemon';
-import { notFound } from 'next/navigation';
 
 interface Props {
   params: { id: string };
 }
 
-export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
-  const paramsAsync = await params;
-  const { name } = await getPokemon(paramsAsync.id);
+// export async function generateStaticParams() {
 
+// }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
-    const pokemon = await getPokemon(paramsAsync.id);
+    const { id } = await params;
+    const { name } = await getPokemon(id);
     return {
       title: name,
       description: `This is the page for the pokemon ${name}`,
@@ -23,7 +25,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
       description: 'The pokemon you are looking for does not exist',
     };
   }
-};
+}
 
 const getPokemon = async (id: string) => {
   try {
@@ -35,13 +37,14 @@ const getPokemon = async (id: string) => {
 
     return pokemon;
   } catch (error) {
+    console.error(error);
     notFound();
   }
 };
 
 export default async function PokemonPage({ params }: Props) {
-  const paramsAsync = await params;
-  const pokemon = await getPokemon(paramsAsync.id);
+  const { id } = await params;
+  const pokemon = await getPokemon(id);
 
   return (
     <div className="flex mt-5 flex-col items-center text-slate-800">
