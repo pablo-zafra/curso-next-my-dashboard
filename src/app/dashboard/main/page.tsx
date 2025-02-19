@@ -7,10 +7,10 @@ export const metadata = {
 
 export default function MainPage() {
   return (
-    <div className='text-black p-2'>
+    <div className="text-black p-2">
       <h1>Dashboard</h1>
       <span>Información general</span>
-      <div className='flex flex-col items-center p-2 w-full gap-4'>
+      <div className="flex flex-col items-center p-2 w-full gap-4">
         <Cartwidget />
       </div>
     </div>

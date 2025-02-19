@@ -7,10 +7,5 @@
     "trailingComma": "none",
     "printWidth": 80,
     "proseWrap": "preserve",
-    "spaceAroundTypeAnnotations": false,
-    "bracketSameLine": false,
-    "jsxBracketSameLine": false,
-    "jsxSingleQuote": true,
-    "htmlWhitespaceSensitivity": "ignore",
-    "singleAttributePerLine": true
+    "bracketSameLine": false
   }
