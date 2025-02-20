@@ -1,11 +1,11 @@
-import { NextResponse } from "next/server";
-
-
+import { NextResponse } from 'next/server';
+import { useEffect } from 'react';
 
 export async function GET(request: Request) {
-    console.log({ method: request.method });
+  console.log({ method: request.method });
 
-    return NextResponse.json({
-        count: 100
-    });
+  return NextResponse.json({
+    method: 'GET',
+    count: 100
+  });
 }
