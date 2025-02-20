@@ -14,7 +14,9 @@ interface Props {
 export const PokemonCard = ({ pokemon }: Props) => {
   const pokemonState = useAppSelector(state => state.pokemon);
   const dispatch = useAppDispatch();
-  const isFavorite = pokemonState[pokemon.id.toString()] ? true : false;
+
+  const isFavorite = pokemon.id.toString() in pokemonState ? true : false;
+
   const onToogle = () => {
     dispatch(toogleFavorite(pokemon));
   };

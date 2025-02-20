@@ -5,7 +5,7 @@
   "objectWrap": "preserve",
   "singleQuote": true,
   "trailingComma": "none",
-  "printWidth": 80,
+  "printWidth": 90,
   "tabWidth": 2,
   "proseWrap": "preserve",
   "bracketSameLine": false
